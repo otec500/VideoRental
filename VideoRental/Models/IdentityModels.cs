@@ -20,8 +20,9 @@ namespace VideoRental.Models
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
+        public DbSet<Video> Videos { get; set; }    //DbSet z EF reprezentuje tabele w bazie
         public ApplicationDbContext()
-            : base("DefaultConnection", throwIfV1Schema: false)
+            : base("DefaultConnection", throwIfV1Schema: false) //DefaultConnection jest zapisane w Web.config
         {
         }
 
